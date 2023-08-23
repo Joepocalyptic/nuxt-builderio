@@ -57,7 +57,7 @@ const content = computed(() => data.value?.content)
 watch(data, (data) => {
   if (data && data.content) {
     emit('load', data)
-  } else if(props.throwError) {
+  } else if(props.throwError && !isPreviewing()) {
     throw createError({
       statusCode: 404
     })
