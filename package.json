@@ -1,6 +1,6 @@
 {
   "name": "nuxt-builderio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An unofficial Nuxt module for Builder.io, a visual headless CMS.",
   "keywords": [
     "nuxt",

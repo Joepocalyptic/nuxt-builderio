@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://undefined/undefined/compare/v0.1.1...v0.1.2)
+
+### 🏡 Chore
+
+- WIP (5e3b3ee)
+- WIP (e781d2f)
+
+### ❤️  Contributors
+
+- Joey Pereira <contact@joeypereira.dev>
+
 ## v0.1.1
 
 
