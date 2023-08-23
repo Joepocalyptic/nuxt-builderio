@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://undefined/undefined/compare/v0.1.4...v0.1.5)
+
+### 🩹 Fixes
+
+- Only add components plugin if enabled (d19ea7e)
+
+### 🏡 Chore
+
+- Add renovate.json (464caa6)
+- Update renovate.json (1e8e4e8)
+
+### ❤️  Contributors
+
+- Joey Pereira <contact@joeypereira.dev>
+
 ## v0.1.4
 
 [compare changes](https://undefined/undefined/compare/v0.1.3...v0.1.4)
