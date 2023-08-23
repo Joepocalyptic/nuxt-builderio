@@ -83,7 +83,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addPlugin({
       mode: 'client',
-      src: resolve('./runtime/plugins/components.ts')
+      src: resolve('./runtime/plugins/components')
     })
 
     addComponent({
