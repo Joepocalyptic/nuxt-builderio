@@ -81,11 +81,6 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
-    addPlugin({
-      mode: 'client',
-      src: resolve('./runtime/plugins/components')
-    })
-
     addComponent({
       name: 'BuilderContent',
       filePath: resolve('./runtime/components/BuilderContent.vue')
@@ -111,6 +106,11 @@ export default defineNuxtModule<ModuleOptions>({
       addTemplate({
         filename: 'builder/components.mjs',
         getContents: async () => await generateComponentsTemplate(builderComponentsPath)
+      })
+
+      addPlugin({
+        mode: 'client',
+        src: resolve('./runtime/plugins/components')
       })
 
       // Registering the components in Nuxt globally allows them to be rendered during SSR
