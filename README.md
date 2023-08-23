@@ -41,12 +41,12 @@ npm install --save-dev nuxt-builderio
 ```js
 export default defineNuxtConfig({
   modules: [
-    'nuxt-particles'
+    'nuxt-builderio'
   ]
 })
 ```
 
-That's it! Read the [documentation](https://nuxt-particles.joeypereira.dev) for more information, including
+That's it! Read the [documentation](https://nuxt-builderio.joeypereira.dev) for more information, including
 configuration and optimization options.
 
 You can get started extremely quickly by using the provided `BuilderContent` component in a page:

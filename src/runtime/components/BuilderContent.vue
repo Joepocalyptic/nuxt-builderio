@@ -27,12 +27,12 @@ type Props = {
   components?: (ComponentInfo & { component: Component})[]
 }
 
-type BuilderContent = NonNullable<Awaited<ReturnType<typeof fetchBuilderProps>>['content']>
+type BuilderResponse = NonNullable<Awaited<ReturnType<typeof fetchBuilderProps>>>
 
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
-  (e: 'load', content: BuilderContent): void
+  (e: 'load', response: BuilderResponse): void
 }>()
 
 const {
@@ -55,8 +55,8 @@ const { data } = await useAsyncData(async () => await fetchBuilderProps({
 const content = computed(() => data.value?.content)
 
 watch(data, (data) => {
-  if (data.content) {
-    emit('load', content)
+  if (data && data.content) {
+    emit('load', data)
   } else if(props.throwError) {
     throw createError({
       statusCode: 404
