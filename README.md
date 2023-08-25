@@ -11,6 +11,8 @@ Builder.io as a visual CMS for your Nuxt application.
 **This module is currently in development.** It is not yet intended for production use and there will be bugs. Feel
 free to help out by reporting bugs and submitting pull requests!
 
+Furthermore, this module uses Builder's [second-generation Vue SDK](https://www.npmjs.com/package/@builder.io/sdk-vue), which is currently in beta.
+
 - [📖 &nbsp;Documentation](https://nuxt-builderio.joeypereira.dev)
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 - [🏀 Online playground](https://stackblitz.com/github/Joepocalyptic/nuxt-builderio?file=playground%2Fapp.vue)
