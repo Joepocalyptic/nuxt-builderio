@@ -43,11 +43,15 @@ const {
   }
 } = useRuntimeConfig().public.builderIO
 
-const { data } = await useAsyncData(async () => await fetchBuilderProps({
-  model: props.model || defaultModel,
+const model = props.model || defaultModel
+const urlPath = props.path || useRoute().path
+const asyncDataKey = `builder-content-${model}-${urlPath}`
+  
+const { data } = await useAsyncData(asyncDataKey, async () => await fetchBuilderProps({
+  model,
   apiKey,
   userAttributes: {
-    urlPath: props.path || useRoute().path
+    urlPath
   },
   ...props.extra,
 }))
