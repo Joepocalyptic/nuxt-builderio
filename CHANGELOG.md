@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v0.1.6
+
+[compare changes](https://github.com/Joepocalyptic/nuxt-builderio/compare/v0.1.5...v0.1.6)
+
+### 🚀 Enhancements
+
+- Add `injectCss` option ([42d35d6](https://github.com/Joepocalyptic/nuxt-builderio/commit/42d35d6))
+
+### 🩹 Fixes
+
+- Allow multiple usages of BuilderContent component ([59dc9b7](https://github.com/Joepocalyptic/nuxt-builderio/commit/59dc9b7))
+- Allow multiple usages of BuilderContent component ([#10](https://github.com/Joepocalyptic/nuxt-builderio/pull/10))
+
+### 📖 Documentation
+
+- Update README.md ([17e63f2](https://github.com/Joepocalyptic/nuxt-builderio/commit/17e63f2))
+- Document `injectCss` option ([82147d7](https://github.com/Joepocalyptic/nuxt-builderio/commit/82147d7))
+
+### 🏡 Chore
+
+- Update dependencies ([d13cb2d](https://github.com/Joepocalyptic/nuxt-builderio/commit/d13cb2d))
+
+### ❤️ Contributors
+
+- Joey Pereira ([@Joepocalyptic](http://github.com/Joepocalyptic))
+- Kai Neuwerth <kai@neuwerth.me>
+
 ## v0.1.5
 
 [compare changes](https://undefined/undefined/compare/v0.1.4...v0.1.5)
