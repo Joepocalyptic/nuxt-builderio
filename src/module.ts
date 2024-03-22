@@ -6,19 +6,20 @@ import {
   createResolver,
   logger,
   addImports,
-  isNuxt2,
   addComponent,
   addComponentsDir, addVitePlugin, addWebpackPlugin, addTemplate
 } from '@nuxt/kit'
 import defu from 'defu'
-import { BuilderComponentPlugin, BuilderComponentPluginOptions } from './lib/components-unplugin'
+import { BuilderComponentPlugin } from './lib/components-unplugin'
+import type {BuilderComponentPluginOptions } from './lib/components-unplugin'
 import { generateComponentsTemplate } from './lib/components'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   autoImports: string[] | false
   apiKey?: string
-  defaultModel: string
+  defaultModel: string,
+  injectCss: boolean,
   components: {
     enabled: boolean
     dir: string
@@ -56,6 +57,7 @@ export default defineNuxtModule<ModuleOptions>({
       'getBuilderSearchParams',
       'createRegisterComponentMessage'
     ],
+    injectCss: true,
     defaultModel: 'page',
     components: {
       enabled: true,
@@ -90,7 +92,7 @@ export default defineNuxtModule<ModuleOptions>({
     if(options.components.enabled) {
       const componentPluginOptions: BuilderComponentPluginOptions = {
         dev: nuxt.options.dev,
-        sourcemap: nuxt.options.sourcemap.server || nuxt.options.sourcemap.client
+        sourcemap: !!nuxt.options.sourcemap.server || !!nuxt.options.sourcemap.client
       }
 
       // Handles `defineBuilderComponent` extraction; adapted from Nuxt's built-in `definePageMeta`
@@ -129,9 +131,10 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // TODO: Possible Nuxt 2 support?
-    const builderLibraryPath = isNuxt2(nuxt)
+    /*const builderLibraryPath = isNuxt2(nuxt)
       ? '@builder.io/sdk-vue/vue2'
-      : '@builder.io/sdk-vue/vue3'
+      : '@builder.io/sdk-vue/vue3'*/
+    const builderLibraryPath = '@builder.io/sdk-vue'
 
     if(options.autoImports) {
       addImports(options.autoImports.map(item => ({
@@ -151,5 +154,10 @@ export default defineNuxtModule<ModuleOptions>({
       as: 'useBuilderComponents',
       from: resolve('./runtime/composables/builder-components')
     }])
+
+    // Inject Builder.io global CSS if enabled
+    if (options.injectCss) {
+      nuxt.options.css.push('@builder.io/sdk-vue/css')
+    }
   }
 })
