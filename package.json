@@ -44,7 +44,7 @@
     "acorn": "^8.11.3",
     "changelogen": "^0.5.5",
     "defu": "^6.1.4",
-    "eslint": "^8.57.0",
+    "eslint": "^9.13.0",
     "estree-walker": "^3.0.3",
     "knitwork": "^1.0.0",
     "magic-string": "^0.30.8",
