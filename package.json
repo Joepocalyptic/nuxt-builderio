@@ -39,7 +39,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@builder.io/sdk-vue": "^1.0.15",
+    "@builder.io/sdk-vue": "^2.0.24",
     "@nuxt/kit": "^3.11.1",
     "acorn": "^8.11.3",
     "changelogen": "^0.5.5",
